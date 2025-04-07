@@ -3,237 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confeitaria Doce Encanto</title>
-    <style>
-        :root {
-            --rosa-claro: #ffd6e0;
-            --rosa-pastel: #ffb3c6;
-            --azul-claro: #d6e2ff;
-            --azul-pastel: #b3c6ff;
-            --branco: #fff;
-            --texto: #5a5a5a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-            color: var(--texto);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Estilo do catálogo rolável */
-        .scroller {
-            width: 100%;
-            overflow-x: auto;
-            padding: 30px 0;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            cursor: grab;
-        }
-
-        .scroller::-webkit-scrollbar {
-            display: none;
-        }
-
-        .product-scroll {
-            display: inline-flex;
-            gap: 25px;
-            padding: 0 10px;
-        }
-
-        .product-card {
-            flex: 0 0 280px;
-            background: var(--branco);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .price {
-            display: block;
-            font-size: 1.3rem;
-            color: var(--rosa-pastel);
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--rosa-pastel);
-            color: var(--branco);
-            padding: 10px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--azul-pastel);
-        }
-
-        /* Seção de produtos */
-        #produtos {
-            padding: 80px 0;
-            background: var(--branco);
-        }
-
-        #produtos h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--rosa-pastel);
-            margin-bottom: 15px;
-        }
-
-        #produtos p {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-    </style>
+    <title>Doce Encanto | Confeitaria Artesanal</title>
+    <meta name="description" content="Confeitaria especializada em bolos decorados e doces finos">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icones/cupcake.svg" type="image/svg+xml">
 </head>
 <body>
-    <section id="produtos">
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
         <div class="container">
-            <h2>Nossas Delícias</h2>
-            <p>Arraste para o lado para ver mais opções</p>
+            <a href="#" class="logo">Doce Encanto</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="menu-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Hero -->
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Bolos que são obras de arte</h1>
+            <p>Confeitaria artesanal com toque de elegância</p>
+            <a href="#produtos" class="btn">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <!-- Seção Produtos -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossas Delícias</h2>
+            <p class="section-subtitle">Conheça nossos produtos mais pedidos</p>
             
-            <div class="scroller">
-                <div class="product-scroll">
-                    <!-- Produto 1 -->
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="assets/produtos/bolo1.jpg" alt="Bolo de Chocolate">
-                        </div>
-                        <div class="product-info">
-                            <h3>Bolo de Chocolate</h3>
-                            <p>Camadas de chocolate belga</p>
-                            <span class="price">R$ 120,00</span>
-                            <button class="btn">Encomendar</button>
-                        </div>
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/produtos/bolo-festa.jpg" alt="Bolo de Festa Decorado" loading="lazy">
                     </div>
-                    
-                    <!-- Produto 2 -->
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="assets/produtos/bolo2.jpg" alt="Bolo de Morango">
-                        </div>
-                        <div class="product-info">
-                            <h3>Bolo de Morango</h3>
-                            <p>Recheio de creme de morango fresco</p>
-                            <span class="price">R$ 140,00</span>
-                            <button class="btn">Encomendar</button>
-                        </div>
+                    <div class="product-info">
+                        <h3>Bolo de Festa</h3>
+                        <p>Decoração personalizada com flores naturais</p>
+                        <span class="price">R$ 150,00</span>
+                        <button class="btn small">Encomendar</button>
                     </div>
-                    
-                    <!-- Produto 3 -->
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="assets/produtos/bolo3.jpg" alt="Bolo Naked">
-                        </div>
-                        <div class="product-info">
-                            <h3>Bolo Naked</h3>
-                            <p>Camadas à vista com frutas</p>
-                            <span class="price">R$ 160,00</span>
-                            <button class="btn">Encomendar</button>
-                        </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/produtos/cupcake.jpg" alt="Cupcakes Decorados" loading="lazy">
                     </div>
-                    
-                    <!-- Adicione quantos produtos quiser seguindo o mesmo padrão -->
+                    <div class="product-info">
+                        <h3>Cupcakes</h3>
+                        <p>Caixa com 12 unidades - sabores variados</p>
+                        <span class="price">R$ 80,00</span>
+                        <button class="btn small">Encomendar</button>
+                    </div>
+                </div>
+                
+                <!-- Adicione mais produtos conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="assets/images/foto-chef.jpg" alt="Ana - Confeiteira Chefe">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Nossa História</h2>
+                    <p>Há mais de 8 anos transformando momentos especiais em doces memórias. Cada bolo é feito com ingredientes selecionados e muito carinho.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> Ingredientes naturais</li>
+                        <li><i class="fas fa-check"></i> Decoração personalizada</li>
+                        <li><i class="fas fa-check"></i> Entregamos em toda a cidade</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        // Tornando o arraste mais suave
-        const scroller = document.querySelector('.scroller');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    <!-- Seção Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Faça sua encomenda</h2>
+            <p class="section-subtitle">Preencha o formulário ou nos chame no WhatsApp</p>
+            
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="tel" placeholder="Seu telefone">
+                    <textarea placeholder="Descreva seu pedido"></textarea>
+                    <button type="submit" class="btn">Enviar Pedido</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(11) 98765-4321</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contato@doceencanto.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Rua das Flores, 123 - Centro</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><img src="assets/icones/whatsapp.svg" alt="WhatsApp"></a>
+                        <a href="#"><img src="assets/icones/instagram.svg" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        scroller.addEventListener('mousedown', (e) => {
-            isDown = true;
-            scroller.style.cursor = 'grabbing';
-            startX = e.pageX - scroller.offsetLeft;
-            scrollLeft = scroller.scrollLeft;
-        });
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Doce Encanto Confeitaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-        scroller.addEventListener('mouseleave', () => {
-            isDown = false;
-            scroller.style.cursor = 'grab';
-        });
-
-        scroller.addEventListener('mouseup', () => {
-            isDown = false;
-            scroller.style.cursor = 'grab';
-        });
-
-        scroller.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scroller.offsetLeft;
-            const walk = (x - startX) * 2;
-            scroller.scrollLeft = scrollLeft - walk;
-        });
-
-        // Funcionalidade de toque para mobile
-        scroller.addEventListener('touchstart', (e) => {
-            isDown = true;
-            startX = e.touches[0].pageX - scroller.offsetLeft;
-            scrollLeft = scroller.scrollLeft;
-        });
-
-        scroller.addEventListener('touchend', () => {
-            isDown = false;
-        });
-
-        scroller.addEventListener('touchmove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.touches[0].pageX - scroller.offsetLeft;
-            const walk = (x - startX) * 2;
-            scroller.scrollLeft = scrollLeft - walk;
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
