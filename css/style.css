@@ -1,12 +1,12 @@
 /* Cores Pastéis */
 :root {
-    --rosa-claro: #ffd6e0;
+    --rosa-claro: #ffd6f8;
     --rosa-pastel: #ffb3c6;
     --azul-claro: #d6e2ff;
     --azul-pastel: #b3c6ff;
     --branco: #fff;
     --cinza-claro: #f8f9fa;
-    --texto: #5a5a5a;
+    --texto: #434449;
     --sombra: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -127,7 +127,7 @@ h1, h2, h3 {
 /* Banner Hero */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(255,214,224,0.7), rgba(214,226,255,0.7)), 
+    background: linear-gradient(#ffaee0b3, rgba(179, 192, 252, 0.7)), 
                 url('../assets/images/banner-principal.jpg');
     background-size: cover;
     background-position: center;
