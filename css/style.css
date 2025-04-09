@@ -220,7 +220,9 @@ h1, h2, h3 {
     margin: 15px 0;
 }
 
-/* Seção Sobre */
+/* ========================================= */
+/* SEÇÃO SOBRE - ESTILOS DO CARROSSEL ADICIONADOS */
+/* ========================================= */
 .about {
     padding: 100px 0;
     background: var(--azul-claro);
@@ -237,11 +239,33 @@ h1, h2, h3 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--sombra);
+    position: relative;
+    height: 500px; /* Altura fixa para o carrossel */
 }
 
-.about-img img {
+/* Estilos do Carrossel Fade */
+.fade-carousel {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
+}
+
+.fade-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-slide.active {
+    opacity: 1;
+}
+
+.fade-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
@@ -359,7 +383,9 @@ footer {
     text-align: center;
 }
 
-/* Responsividade */
+/* ========================================= */
+/* RESPONSIVIDADE - AJUSTES PARA O CARROSSEL */
+/* ========================================= */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -375,6 +401,11 @@ footer {
     
     .about-content {
         flex-direction: column;
+    }
+
+    .about-img {
+        height: 350px; /* Altura menor em mobile */
+        margin-bottom: 30px;
     }
     
     .contact-content {
